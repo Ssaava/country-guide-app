@@ -1,26 +1,53 @@
-import getCountries from "./modules/api.js";
-import Navigation from "./components/navigation.js";
+import getCountries from "./modules/api";
+import Navigation from "./components/navigation";
 import card from "./components/card.js";
-import switchMode from "./modules/switchMode.js";
-import { searchCountry, searchedCountry } from "./modules/functions.js";
+import switchMode from "./modules/switchMode";
+import {
+  searchCountry,
+  searchedCountry,
+  filterCountry,
+  filteredCountry,
+} from "./modules/functions";
 import "./node_modules/normalize.css";
 // import "./sass/style.scss";
 import "./css/style.css";
 import "./node_modules/bootstrap/dist/js/bootstrap.bundle.js";
 
 const app = document.getElementById("app");
-const searchInputValue = localStorage.getItem("searchInput");
+const searchInputValue = localStorage.getItem("searchInput") || "";
+const filteredListValue = localStorage.getItem("filterInput") || "";
 async function countries() {
   try {
     const sortedCountries = await getCountries();
+    console.log(sortedCountries);
     app.innerHTML = Navigation() + card(sortedCountries);
+    // get contents of the DOM after they are loaded
     const countriesContainer = document.querySelector(".cards-container");
     const searchInput = document.querySelector("input[name='search']");
+    const filteredList = document.querySelector("#continent");
+    // search for a country
     if (searchInputValue !== "") {
       searchInput.value = searchInputValue;
       searchedCountry(sortedCountries, countriesContainer, searchInputValue);
     }
-    searchCountry(countriesContainer, searchInput, sortedCountries);
+
+    searchCountry(
+      countriesContainer,
+      searchInput,
+      sortedCountries,
+      filteredList
+    );
+    // filter countries by region
+    if (filteredListValue !== "" && filteredListValue !== "All Countries") {
+      filteredList.value = filteredListValue;
+      filteredCountry(sortedCountries, countriesContainer, filteredListValue);
+    }
+    filterCountry(
+      countriesContainer,
+      filteredList,
+      sortedCountries,
+      searchInput
+    );
     switchMode();
   } catch (error) {
     document.write(`make sure your correct the error ${error.message}`);
