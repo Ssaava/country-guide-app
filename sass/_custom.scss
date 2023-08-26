@@ -5,4 +5,4 @@ $btn-border-width: none;
 $text-muted: red;
 $border-width: 2px;
 
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@use "../node_modules/bootstrap/scss/bootstrap.scss";

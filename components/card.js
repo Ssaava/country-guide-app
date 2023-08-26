@@ -1,6 +1,6 @@
 // arrayOperations(sortedCountries);the getCountries function return a promise
 // thus need to work with it the right way using .then() to get the resolved value
-import { verifyCapital } from "./arrayOperation";
+import { verifyCapital } from "../modules/functions.js";
 function generateCard(country) {
   return `
     <div class = "card countryCard light-mode">
@@ -53,13 +53,15 @@ function Card(sortedCountries) {
             </select>
         </form>
         <!-- this part is for the cards to be displayed --> 
-        <div class="container-fluid row justify-content-center countries-container">
+        <div class="container-fluid row justify-content-center cards-container countries-container">
         <!-- new  card  -->
             ${cardHtml}
         <!-- card end --> 
         </div>
+        <p class="text-center pt-5 author">Made with ❣️by Ema⚡</p>
     </section>
   `;
 }
 
 export default Card;
+export { generateCard };
