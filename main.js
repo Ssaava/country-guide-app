@@ -1,6 +1,7 @@
 import getCountries from "./modules/api";
 import Navigation from "./components/navigation";
 import card from "./components/card.js";
+import cardDetails from "./components/cardDetails";
 import switchMode from "./modules/switchMode";
 import {
   searchCountry,
@@ -19,12 +20,13 @@ const filteredListValue = localStorage.getItem("filterInput") || "";
 async function countries() {
   try {
     const sortedCountries = await getCountries();
-    console.log(sortedCountries);
     app.innerHTML = Navigation() + card(sortedCountries);
     // get contents of the DOM after they are loaded
     const countriesContainer = document.querySelector(".cards-container");
     const searchInput = document.querySelector("input[name='search']");
     const filteredList = document.querySelector("#continent");
+    const cards = document.querySelectorAll(".card");
+    const section = document.querySelector("section");
     // search for a country
     if (searchInputValue !== "") {
       searchInput.value = searchInputValue;
@@ -48,6 +50,9 @@ async function countries() {
       sortedCountries,
       searchInput
     );
+    // display a single country on click
+    cardDetails(sortedCountries, cards, section);
+
     switchMode();
   } catch (error) {
     document.write(`make sure your correct the error ${error.message}`);
@@ -55,6 +60,7 @@ async function countries() {
 }
 countries();
 
+export default countries;
 /**
  * Key features of the Country Guide website
             * country name

@@ -91,4 +91,36 @@ export {
   filterCountry,
   filteredCountry,
 };
+// cardDetails
+const cardCountry = (sortedCountries, query) => {
+  const filteredCountry = sortedCountries.filter((country) =>
+    country.name.common.toLowerCase().includes(query.toLowerCase())
+  );
+  return filteredCountry;
+};
+const getNativeName = (country) => {
+  const nativeNameArray = Object.values(country.name.nativeName);
+  if (nativeNameArray === undefined) {
+    return "There is no native name";
+  }
+  return nativeNameArray[nativeNameArray.length - 1].common;
+};
+const getLanguages = (country) => {
+  let languages = "";
+  const languagesArray = Object.values(country.languages);
+  languagesArray.forEach((language) => {
+    languages = language + ", " + languages;
+  });
+  if (languages === "") {
+    return "No languages Spoken";
+  }
+  // remove the last comma and whitespace in the languages array then return the results
+  return languages.slice(0, length - 2);
+};
+const filterCountryByAltName = (arr, query) => {
+  return arr.filter((country) =>
+    country.cca3.toLowerCase().includes(query.toLowerCase())
+  );
+};
 export default verifyCapital;
+export { cardCountry, getNativeName, getLanguages, filterCountryByAltName };
