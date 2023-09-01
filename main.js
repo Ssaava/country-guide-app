@@ -1,6 +1,6 @@
 import getCountries from "./modules/api";
 import Navigation from "./components/navigation";
-import card from "./components/card.js";
+import card from "./components/card";
 import cardDetails from "./components/cardDetails";
 import switchMode from "./modules/switchMode";
 import {
@@ -8,12 +8,10 @@ import {
   searchedCountry,
   filterCountry,
   filteredCountry,
-  cardsContainerValue,
 } from "./modules/functions";
 import "./node_modules/normalize.css";
 // import "./sass/style.scss";
 import "./css/style.css";
-import "./node_modules/bootstrap/dist/js/bootstrap.bundle.js";
 
 const app = document.getElementById("app");
 const searchInputValue = localStorage.getItem("searchInput") || "";
@@ -22,6 +20,7 @@ async function countries() {
   try {
     const sortedCountries = await getCountries();
     app.innerHTML = Navigation() + card(sortedCountries);
+
     // get contents of the DOM after they are loaded
     const countriesContainer = document.querySelector(".cards-container");
     const searchInput = document.querySelector("input[name='search']");
@@ -31,7 +30,12 @@ async function countries() {
     // search for a country
     if (searchInputValue !== "") {
       searchInput.value = searchInputValue;
-      searchedCountry(sortedCountries, countriesContainer, searchInputValue);
+      searchedCountry(
+        sortedCountries,
+        countriesContainer,
+        searchInputValue,
+        section
+      );
     }
 
     searchCountry(
@@ -44,7 +48,12 @@ async function countries() {
     // filter countries by region
     if (filteredListValue !== "" && filteredListValue !== "All Countries") {
       filteredList.value = filteredListValue;
-      filteredCountry(sortedCountries, countriesContainer, filteredListValue);
+      filteredCountry(
+        sortedCountries,
+        countriesContainer,
+        filteredListValue,
+        section
+      );
     }
     filterCountry(
       countriesContainer,

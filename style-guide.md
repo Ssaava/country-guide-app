@@ -71,3 +71,13 @@ https://www.accessibility-developer-guide.com/
 all data has been loaded into the page and well sorted
 
 Next part is working on the search bar to work effectively but will do this next week
+
+<!-- what we are missing for our project to work out well to our expectations -->
+
+1 - If back button is clicked, we cannot re click on the card to display its details
+2 - If page is loaded with a searched or filtered Input value, we cannot reclick on the card to display its details
+
+<!-- Expected solution -->
+
+1 - let back button load only content for the section and then keep track of the inner contents
+2 - make the page read the contents of the section when the page loads. do this in the functions used to filter and display the content
