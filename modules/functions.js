@@ -1,4 +1,6 @@
 import { generateCard } from "../components/card";
+import cardDetails from "../components/cardDetails";
+let cardsContainerValue = [];
 const verifyCapital = (country) => {
   if (country.capital === undefined) {
     return "No capital";
@@ -8,13 +10,28 @@ const verifyCapital = (country) => {
 
 // search operations
 // function will be used for filter functionality
-const searchedCountry = (sortedCountries, countriesContainer, query) => {
+const searchedCountry = (
+  sortedCountries,
+  countriesContainer,
+  query,
+  section
+) => {
   const filteredCountries = sortedCountries.filter((country) =>
     country.name.common.toLowerCase().includes(query.toLowerCase())
   );
-  verifySearchedCountry(countriesContainer, filteredCountries);
+  verifySearchedCountry(
+    countriesContainer,
+    filteredCountries,
+    sortedCountries,
+    section
+  );
 };
-const verifySearchedCountry = (countriesContainer, newArray) => {
+const verifySearchedCountry = (
+  countriesContainer,
+  newArray,
+  sortedCountries,
+  section
+) => {
   if (newArray.length <= 0) {
     countriesContainer.innerHTML =
       "<h3 class='text-danger'>There is no such country<h3>";
@@ -22,6 +39,8 @@ const verifySearchedCountry = (countriesContainer, newArray) => {
     countriesContainer.innerHTML = "";
     const cardHtml = newArray.map(generateCard).join("");
     countriesContainer.innerHTML = cardHtml;
+    const cards = document.querySelectorAll(".card");
+    cardDetails(sortedCountries, cards, section);
   }
 };
 
@@ -43,13 +62,28 @@ const searchCountry = (
 
 // filtering countries
 
-const filteredCountry = (sortedCountries, countriesContainer, query) => {
+const filteredCountry = (
+  sortedCountries,
+  countriesContainer,
+  query,
+  section
+) => {
   const filteredCountries = sortedCountries.filter((country) =>
     country.region.toLowerCase().includes(query.toLowerCase())
   );
-  verifyFilteredCountry(countriesContainer, filteredCountries);
+  verifyFilteredCountry(
+    countriesContainer,
+    filteredCountries,
+    sortedCountries,
+    section
+  );
 };
-const verifyFilteredCountry = (countriesContainer, newArray) => {
+const verifyFilteredCountry = (
+  countriesContainer,
+  newArray,
+  sortedCountries,
+  section
+) => {
   if (newArray.length <= 0) {
     countriesContainer.innerHTML =
       "<h3 class='text-danger'>There is no such country<h3>";
@@ -57,6 +91,8 @@ const verifyFilteredCountry = (countriesContainer, newArray) => {
     countriesContainer.innerHTML = "";
     const cardHtml = newArray.map(generateCard).join("");
     countriesContainer.innerHTML = cardHtml;
+    const cards = document.querySelectorAll(".card");
+    cardDetails(sortedCountries, cards, section);
   }
 };
 
@@ -123,4 +159,10 @@ const filterCountryByAltName = (arr, query) => {
   );
 };
 export default verifyCapital;
-export { cardCountry, getNativeName, getLanguages, filterCountryByAltName };
+export {
+  cardCountry,
+  getNativeName,
+  getLanguages,
+  filterCountryByAltName,
+  cardsContainerValue,
+};

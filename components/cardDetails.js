@@ -134,6 +134,7 @@ function cardDetails(sortedCountries, cards, section) {
         });
       });
       // back button functionality added here
+      // if we press the back button, we want to alter the section not the inner html incase their is a value of the search input presented
       const backButton = document.querySelector(".back");
       backButton.addEventListener("click", () => {
         countries();
