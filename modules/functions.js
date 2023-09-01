@@ -1,4 +1,5 @@
 import { generateCard } from "../components/card";
+let cardsContainerValue = [];
 const verifyCapital = (country) => {
   if (country.capital === undefined) {
     return "No capital";
@@ -22,6 +23,7 @@ const verifySearchedCountry = (countriesContainer, newArray) => {
     countriesContainer.innerHTML = "";
     const cardHtml = newArray.map(generateCard).join("");
     countriesContainer.innerHTML = cardHtml;
+    cardsContainerValue = document.querySelectorAll(".card");
   }
 };
 
@@ -123,4 +125,10 @@ const filterCountryByAltName = (arr, query) => {
   );
 };
 export default verifyCapital;
-export { cardCountry, getNativeName, getLanguages, filterCountryByAltName };
+export {
+  cardCountry,
+  getNativeName,
+  getLanguages,
+  filterCountryByAltName,
+  cardsContainerValue,
+};

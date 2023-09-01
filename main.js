@@ -8,6 +8,7 @@ import {
   searchedCountry,
   filterCountry,
   filteredCountry,
+  cardsContainerValue,
 } from "./modules/functions";
 import "./node_modules/normalize.css";
 // import "./sass/style.scss";
@@ -39,6 +40,7 @@ async function countries() {
       sortedCountries,
       filteredList
     );
+
     // filter countries by region
     if (filteredListValue !== "" && filteredListValue !== "All Countries") {
       filteredList.value = filteredListValue;
