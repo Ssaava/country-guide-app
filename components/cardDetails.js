@@ -122,7 +122,7 @@ function cardDetails(sortedCountries, cards, section, borderCountries = "") {
     // console.log(card);
     card.addEventListener("click", (e) => {
       e.preventDefault();
-      const country = card.querySelector("h5").textContent;
+      const country = card.querySelector("h6").textContent;
       const countryDetails = cardCountry(sortedCountries, country);
       countryDetails.forEach((country) => {
         // section.innerHTML = "";

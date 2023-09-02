@@ -10,7 +10,7 @@ function generateCard(country) {
         alt= flag of ${country.name.common}
         />
         <div class="card-body">
-            <h5 class="card-title fw-bold w-100">${country.name.common}</h5>
+            <h6 class="card-title fw-bold w-100">${country.name.common}</h6>
             <ul class="card-text fw-light">
                 <li>Population: <span>${country.population}</span></li>
                 <li>Region: <span>${country.region}</span></li>
