@@ -17,9 +17,10 @@
 - [How to Clone This Repository](#how-to-clone-this-repository)
 
 - [How to Run the app on your local machine](#how-to-run-the-app-on-your-local-machine)
-  [Featues and Functionality of the Website](#featues-and-functionality-of-the-website)
 
-  [My Process](#my-process)
+[Featues and Functionality of the Website](#featues-and-functionality-of-the-website)
+
+[My Process](#my-process)
 
 - [Built with](#built-with)
 - [Useful resources](#useful-resources)
