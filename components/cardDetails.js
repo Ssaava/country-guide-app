@@ -106,7 +106,18 @@ function cardInformation(sortedCountries, country) {
     
     `;
 }
-function cardDetails(sortedCountries, cards, section) {
+function cardDetails(sortedCountries, cards, section, borderCountries = "") {
+  if (borderCountries !== "") {
+    console.log(borderCountries);
+    // const countryDetails = cardCountry(sortedCountries, country);
+    // countryDetails.forEach((country) => {
+    //   // section.innerHTML = "";
+    //   section.classList.remove("cards");
+    //   section.classList.add("card-display", "container-fluid");
+    //   section.innerHTML = cardInformation(sortedCountries, country);
+    //   borderCountries = document.querySelectorAll(".border-country");
+    // });
+  }
   cards.forEach((card) => {
     // console.log(card);
     card.addEventListener("click", (e) => {
@@ -118,18 +129,24 @@ function cardDetails(sortedCountries, cards, section) {
         section.classList.remove("cards");
         section.classList.add("card-display", "container-fluid");
         section.innerHTML = cardInformation(sortedCountries, country);
+        borderCountries = document.querySelectorAll(".border-country");
       });
       // adding the country details when border is clicked
+
       const countryDetail = document.querySelector(".country-details");
-      let borderCountries = document.querySelectorAll(".border-country");
+
       borderCountries.forEach((borderCountry) => {
         borderCountry.addEventListener("click", (e) => {
           e.preventDefault();
           const country = borderCountry.innerHTML;
+
           const countryDetails = cardCountry(sortedCountries, country);
+
           countryDetails.forEach((country) => {
             countryDetail.innerHTML = cardDetail(sortedCountries, country);
-            cardDetails(sortedCountries, cards, section);
+            // borderCountries = document.querySelectorAll(".border-country");
+            // cardDetails(sortedCountries, cards, section, borderCountries);
+            // console.log(borderCountries);
           });
         });
       });
