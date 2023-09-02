@@ -13,10 +13,10 @@ import "./node_modules/normalize.css";
 // import "./sass/style.scss";
 import "./css/style.css";
 
-const app = document.getElementById("app");
-const searchInputValue = localStorage.getItem("searchInput") || "";
-const filteredListValue = localStorage.getItem("filterInput") || "";
 async function countries() {
+  const app = document.getElementById("app");
+  const searchInputValue = localStorage.getItem("searchInput") || "";
+  const filteredListValue = localStorage.getItem("filterInput") || "";
   try {
     const sortedCountries = await getCountries();
     app.innerHTML = Navigation() + card(sortedCountries);
@@ -42,7 +42,8 @@ async function countries() {
       countriesContainer,
       searchInput,
       sortedCountries,
-      filteredList
+      filteredList,
+      section
     );
 
     // filter countries by region
@@ -59,7 +60,8 @@ async function countries() {
       countriesContainer,
       filteredList,
       sortedCountries,
-      searchInput
+      searchInput,
+      section
     );
     // display a single country on click
     cardDetails(sortedCountries, cards, section);

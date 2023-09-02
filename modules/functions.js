@@ -49,14 +49,20 @@ const searchCountry = (
   countriesContainer,
   searchInput,
   sortedCountries,
-  filteredList
+  filteredList,
+  section
 ) => {
   searchInput.addEventListener("input", (e) => {
     e.preventDefault();
     localStorage.setItem("filterInput", "");
     localStorage.setItem("searchInput", searchInput.value);
     filteredList.value = "All Countries";
-    searchedCountry(sortedCountries, countriesContainer, searchInput.value);
+    searchedCountry(
+      sortedCountries,
+      countriesContainer,
+      searchInput.value,
+      section
+    );
   });
 };
 
@@ -100,7 +106,8 @@ function filterCountry(
   countriesContainer,
   filteredList,
   sortedCountries,
-  searchInput
+  searchInput,
+  section
 ) {
   filteredList.addEventListener("change", (e) => {
     e.preventDefault();
@@ -111,7 +118,12 @@ function filterCountry(
       countriesContainer.innerHTML = cardHtml;
     } else {
       countriesContainer.innerHTML = "";
-      filteredCountry(sortedCountries, countriesContainer, filteredList.value);
+      filteredCountry(
+        sortedCountries,
+        countriesContainer,
+        filteredList.value,
+        section
+      );
     }
     // clear the input fields
     localStorage.setItem("filterInput", filteredList.value);
