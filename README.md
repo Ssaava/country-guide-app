@@ -14,10 +14,10 @@
 
 [Getting Started](#getting-started)
 
-- [Steps to Clone This Project](#steps-to-clone-this-project)
+- [How to Clone This Repository](#how-to-clone-this-repository)
 
-- [Work with the website](#Steps)
-- [Featues and Functionality of the Website](#featues-and-functionality-of-the-website)
+- [How to Run the app on your local machine](#how-to-run-the-app-on-your-local-machine)
+  [Featues and Functionality of the Website](#featues-and-functionality-of-the-website)
 
   [My Process](#my-process)
 
@@ -135,7 +135,7 @@ npm run preview
 
 By following these steps, you will be able to access the Country Guide website and explore its features in your browser.
 
-## Featues and Functionality of the Website
+# Featues and Functionality of the Website
 
 - Home Page:
   Provide a search input where users can enter a country name or code.
