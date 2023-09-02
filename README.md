@@ -150,8 +150,8 @@ Optionally, showcase additional data like borders, neighboring countries, and re
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [here](https://www.frontendmentor.io/solutions/responsive-country-guide-app-using-javascript-sass-and-vite--N8fNUAH7-)
+- Live Site URL: [here](https://b2ae8b82.country-guide-app.pages.dev/)
 
 ## My process
 
