@@ -3,6 +3,7 @@ import Navigation from "./components/navigation";
 import card from "./components/card";
 import cardDetails from "./components/cardDetails";
 import switchMode from "./modules/switchMode";
+import Layout from "./components/loader";
 import {
   searchCountry,
   searchedCountry,
@@ -13,6 +14,7 @@ import "./node_modules/normalize.css";
 // import "./sass/style.scss";
 import "./css/style.css";
 
+app.innerHTML = Layout();
 async function countries() {
   const app = document.getElementById("app");
   const searchInputValue = localStorage.getItem("searchInput") || "";
@@ -71,7 +73,10 @@ async function countries() {
     document.write(`make sure your correct the error ${error.message}`);
   }
 }
-countries();
+
+window.addEventListener("load", (e) => {
+  countries();
+});
 
 export default countries;
 /**
