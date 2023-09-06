@@ -23,21 +23,23 @@ function switchMode() {
   };
   // toggle dark mode on dom content loaded
   if (changeTheme.matches) {
-    if (theme == "dark") {
-      body.classList.toggle("dark-mode");
-      darkMode();
-    } else {
-      lightMode();
-      body.classList.toggle("light-mode");
-    }
+    // if (theme === "dark") {
+    body.classList.toggle("dark-mode");
+    darkMode();
+    // } else {
+    //   lightMode();
+    //   console.log(theme);
+    //   body.classList.toggle("light-mode");
+    // }
   } else {
-    if (theme == "light") {
-      lightMode();
-      body.classList.toggle("light-mode");
-    } else {
-      darkMode();
-      body.classList.toggle("dark-mode");
-    }
+    // if (theme === "light") {
+    lightMode();
+    body.classList.toggle("light-mode");
+    // } else {
+    //   darkMode();
+    //   console.log(theme);
+    //   body.classList.toggle("dark-mode");
+    // }
   }
 
   // toggling between dark and light mode if button is clicked
