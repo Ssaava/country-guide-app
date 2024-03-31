@@ -73,7 +73,6 @@ async function countries() {
     document.write(`make sure your correct the error ${error.message}`);
   }
 }
-
 window.addEventListener("load", (e) => {
   countries();
 });
