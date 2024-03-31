@@ -5,7 +5,6 @@ import verifyCapital, {
   getLanguages,
   getNativeName,
 } from "../modules/functions";
-
 const borderCountries = (sortedCountries, country) => {
   let borders = ``;
   if (country.borders === undefined) {
@@ -96,6 +95,7 @@ function cardDetail(sortedCountries, country) {
       </div>
   `;
 }
+
 function cardInformation(sortedCountries, country) {
   return `
   <button class="back">Back</button>
@@ -106,26 +106,14 @@ function cardInformation(sortedCountries, country) {
     
     `;
 }
+
 function cardDetails(sortedCountries, cards, section, borderCountries = "") {
-  if (borderCountries !== "") {
-    console.log(borderCountries);
-    // const countryDetails = cardCountry(sortedCountries, country);
-    // countryDetails.forEach((country) => {
-    //   // section.innerHTML = "";
-    //   section.classList.remove("cards");
-    //   section.classList.add("card-display", "container-fluid");
-    //   section.innerHTML = cardInformation(sortedCountries, country);
-    //   borderCountries = document.querySelectorAll(".border-country");
-    // });
-  }
   cards.forEach((card) => {
-    // console.log(card);
     card.addEventListener("click", (e) => {
       e.preventDefault();
       const country = card.querySelector("h5").textContent;
       const countryDetails = cardCountry(sortedCountries, country);
       countryDetails.forEach((country) => {
-        // section.innerHTML = "";
         section.classList.remove("cards");
         section.classList.add("card-display", "container-fluid");
         section.innerHTML = cardInformation(sortedCountries, country);
@@ -144,9 +132,7 @@ function cardDetails(sortedCountries, cards, section, borderCountries = "") {
 
           countryDetails.forEach((country) => {
             countryDetail.innerHTML = cardDetail(sortedCountries, country);
-            // borderCountries = document.querySelectorAll(".border-country");
-            // cardDetails(sortedCountries, cards, section, borderCountries);
-            // console.log(borderCountries);
+            borderCountries = document.querySelectorAll(".border-country");
           });
         });
       });
