@@ -122,11 +122,11 @@ npm install
 npm run dev
 ```
 
-
+```bash
   git clone https://github.com/Ssaava/country-guide-app.git
+```
 
 This command will launch the application locally, and you can access it in your web browser at http://localhost:5173/.
-
 
 3. **Go Production mode:**
    If you want to build the app for production and preview it locally, you can use these commands:
