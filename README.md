@@ -122,7 +122,11 @@ npm install
 npm run dev
 ```
 
+
+  git clone https://github.com/Ssaava/country-guide-app.git
+
 This command will launch the application locally, and you can access it in your web browser at http://localhost:5173/.
+
 
 3. **Go Production mode:**
    If you want to build the app for production and preview it locally, you can use these commands:
@@ -151,7 +155,7 @@ Optionally, showcase additional data like borders, neighboring countries, and re
 ### Links
 
 - Solution URL: [here](https://www.frontendmentor.io/solutions/responsive-country-guide-app-using-javascript-sass-and-vite--N8fNUAH7-)
-- Live Site URL: [here](https://b2ae8b82.country-guide-app.pages.dev/)
+- Live Site URL: [here](https://country-guide-app.pages.dev/)
 
 ## My process
 
