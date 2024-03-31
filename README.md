@@ -72,7 +72,7 @@ By leveraging the **REST Countries API**, we can access a vast repository of cou
 
 - Clone this repository by running the following command in your terminal:
 
-  git clone https://github.com/Ssaava/40-JavaScript-Projects.git
+  git clone https://github.com/Ssaava/country-guide-app.git
 
 Please ensure that you have Git installed on your local machine before executing this command.
 
@@ -97,7 +97,7 @@ Optionally, showcase additional data like borders, neighboring countries, and re
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://country-guide-app.pages.dev/)
 
 ## My process
 
