@@ -14,12 +14,13 @@
 
 [Getting Started](#getting-started)
 
-- [Steps to Clone This Project](#steps-to-clone-this-project)
+- [How to Clone This Repository](#how-to-clone-this-repository)
 
-- [Work with the website](#Steps)
-- [Featues and Functionality of the Website](#featues-and-functionality-of-the-website)
+- [How to Run the app on your local machine](#how-to-run-the-app-on-your-local-machine)
 
-  [My Process](#my-process)
+[Featues and Functionality of the Website](#featues-and-functionality-of-the-website)
+
+[My Process](#my-process)
 
 - [Built with](#built-with)
 - [Useful resources](#useful-resources)
@@ -68,21 +69,78 @@ By leveraging the **REST Countries API**, we can access a vast repository of cou
 
 # Getting Started
 
-## Steps to Clone This Project
+## How to Clone This Repository
 
-- Clone this repository by running the following command in your terminal:
+To get a local copy of this repository on your computer, follow these steps:
+
+1. **Install Git:** If you don't have Git installed on your computer, you can download and install it from [Git's official website](https://git-scm.com/downloads).
+
+2. **Open your Terminal (Linux/macOS) or Command Prompt (Windows):** You'll use your command line interface to run Git commands.
+
+3. **Navigate to your desired directory:** Use the `cd` command to move to the directory where you want to clone the repository. For example:
+
+   ```bash
+   cd path/to/your/directory
+   ```
+
+4. **Clone the Repository:** Copy the repository URL from the "Clone or download" button on this GitHub page. It should look like this:
+
+   ```bash
+   git clone https://github.com/Ssaava/country-guide-app.git
+   ```
+
+5. **Done!** The repository is now cloned to your local machine. You can navigate into the cloned directory with:
+
+   ```bash
+   cd country-guide-app
+   ```
+
+Now you have a local copy of the repository on your computer that you can work with. Happy coding!
+
+## How to Run the app on your local machine
+
+This guide will walk you through the steps to run the application locally on your machine.
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- **Node.js:** Make sure you have Node.js installed on your computer. You can download it from [nodejs.org](https://nodejs.org/).
+
+Follow these steps to get your application up and running:
+
+1. **Install Dependencies:** In your working directory, run the following command to install the necessary dependencies:
+
+```bash
+npm install
+```
+
+2. **Run Development server**
+   After installing the dependencies, run the following command to start the development server
+
+```bash
+npm run dev
+```
+
 
   git clone https://github.com/Ssaava/country-guide-app.git
 
-Please ensure that you have Git installed on your local machine before executing this command.
+This command will launch the application locally, and you can access it in your web browser at http://localhost:5173/.
 
-- Make sure you have Node.js installed on your system, as it will be used for package management and running the necessary build processes.
-- After cloning the repository, navigate to the project directory and open the index.html file in your preferred web browser.
-- In the browser, click on the "Projects" section and select the "Country Guide Project" to launch it.
+
+3. **Go Production mode:**
+   If you want to build the app for production and preview it locally, you can use these commands:
+
+```bash
+npm run build
+# This sets up the production server
+npm run preview
+# This opens the production server locally
+```
 
 By following these steps, you will be able to access the Country Guide website and explore its features in your browser.
 
-## Featues and Functionality of the Website
+# Featues and Functionality of the Website
 
 - Home Page:
   Provide a search input where users can enter a country name or code.
@@ -96,8 +154,8 @@ Optionally, showcase additional data like borders, neighboring countries, and re
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://country-guide-app.pages.dev/)
+- Solution URL: [here](https://www.frontendmentor.io/solutions/responsive-country-guide-app-using-javascript-sass-and-vite--N8fNUAH7-)
+- Live Site URL: [here](https://country-guide-app.pages.dev/)
 
 ## My process
 
