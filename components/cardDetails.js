@@ -111,7 +111,9 @@ function cardDetails(sortedCountries, cards, section, borderCountries = "") {
   cards.forEach((card) => {
     card.addEventListener("click", (e) => {
       e.preventDefault();
-      const country = card.querySelector("h5").textContent;
+
+      const country =
+        card.children[1].lastChild.parentNode.firstElementChild.textContent;
       const countryDetails = cardCountry(sortedCountries, country);
       countryDetails.forEach((country) => {
         section.classList.remove("cards");
