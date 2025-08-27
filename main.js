@@ -13,6 +13,11 @@ import {
 import "./node_modules/normalize.css";
 // import "./sass/style.scss";
 import "./css/style.css";
+let countriesContainer;
+let searchInput;
+let filteredList;
+let cards;
+let section;
 
 app.innerHTML = Layout();
 async function countries() {
@@ -24,11 +29,12 @@ async function countries() {
     app.innerHTML = Navigation() + card(sortedCountries);
 
     // get contents of the DOM after they are loaded
-    const countriesContainer = document.querySelector(".cards-container");
-    const searchInput = document.querySelector("input[name='search']");
-    const filteredList = document.querySelector("#continent");
-    const cards = document.querySelectorAll(".card");
-    const section = document.querySelector("section");
+
+    countriesContainer = document.querySelector(".cards-container");
+    searchInput = document.querySelector("input[name='search']");
+    filteredList = document.querySelector("#continent");
+    cards = document.querySelectorAll(".card");
+    section = document.querySelector("section");
     // search for a country
     if (searchInputValue !== "") {
       searchInput.value = searchInputValue;
@@ -70,7 +76,7 @@ async function countries() {
 
     switchMode();
   } catch (error) {
-    document.write(`make sure your correct the error ${error.message}`);
+    document.write(`make sure you correct the error ${error.message}`);
   }
 }
 window.addEventListener("load", (e) => {
